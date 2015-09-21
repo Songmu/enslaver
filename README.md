@@ -5,7 +5,7 @@ enslaver
 
 [license]: https://github.com/Songmu/enslaver/blob/master/LICENSE
 
-forever
+Works forever.
 
 ## Description
 
