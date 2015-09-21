@@ -27,18 +27,18 @@ type Slave struct {
 	cmdArgs []string
 }
 
-func (sl *Slave) Run() int {
+func (slv *Slave) Run() int {
 	for {
-		sl.labor()
+		slv.labor()
 	}
 }
 
-func (sl *Slave) newCommand() *exec.Cmd {
-	return exec.Command(sl.cmdName, sl.cmdArgs...)
+func (slv *Slave) newCommand() *exec.Cmd {
+	return exec.Command(slv.cmdName, slv.cmdArgs...)
 }
 
-func (sl *Slave) labor() int {
-	cmd := sl.newCommand()
+func (slv *Slave) labor() int {
+	cmd := slv.newCommand()
 	stdoutPipe, err := cmd.StdoutPipe()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
