@@ -66,16 +66,8 @@ func (sl *Slave) labor() int {
 	go io.Copy(os.Stdout, stdoutPipe)
 	go io.Copy(os.Stderr, stderrPipe)
 
-	return <- getExitChan(cmd)
-}
-
-func getExitChan(cmd *exec.Cmd) chan int {
-	ch := make(chan int)
-	go func() {
-		err := cmd.Wait()
-		ch <- resolveExitCode(err)
-	}()
-	return ch
+	err = cmd.Wait()
+	return resolveExitCode(err)
 }
 
 func resolveExitCode(err error) int {
