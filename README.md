@@ -17,13 +17,13 @@ Run a given command forever.
 
 ## Command Line Tool
 
-You can get the command `enslave` by following.
+You can get the command `enslaver` by following.
 
-    % go get github.com/Songmu/enslaver/cmd/enslave
+    % go get github.com/Songmu/enslaver/cmd/enslaver
 
 ### usage
 
-    % enslave perl -E 'while (1) { 0.1 > rand() ? (die "DEAD") : (say "ALIVE!") }'
+    % enslaver perl -E 'while (1) { 0.1 > rand() ? (die "DEAD") : (say "ALIVE!") }'
 
 ## Author
 
